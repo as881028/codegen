@@ -1,4 +1,6 @@
 與ChatGPT-Canvas討論的結果, 晚點實做看看, 先記錄一下
+目標: 透過 SPEC快速產生 API, 並自動產生UT 以及透過 HURL 做回歸測試, 加速開發流程
+
 
 ---
 你可以按照以下步驟在 Ubuntu 和 IntelliJ 中建立使用 Spring Boot 3.2 和 JDK 17 的專案，並透過 OpenAPI Codegen 自動生成 API 相關程式碼：
