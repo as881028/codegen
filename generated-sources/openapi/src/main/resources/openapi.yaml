@@ -1,0 +1,79 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  version: 1.0.0
+servers:
+- url: /
+paths:
+  /tw/books:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/TwChineseBook'
+                type: array
+          description: A list of Chinese books
+      summary: Get list of Chinese books
+      tags:
+      - tw
+      x-feature-toggle: new-tw-books-feature
+      x-accepts: application/json
+      x-tags:
+      - tag: tw
+  /us/books:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/UsEnglishBook'
+                type: array
+          description: A list of English books
+      summary: Get list of English books
+      tags:
+      - us
+      x-feature-toggle: new-us-books-feature
+      x-accepts: application/json
+      x-tags:
+      - tag: us
+components:
+  schemas:
+    TwChineseBook:
+      example:
+        author: author
+        language: Chinese
+        id: 0
+        title: title
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        author:
+          type: string
+        language:
+          example: Chinese
+          type: string
+      type: object
+    UsEnglishBook:
+      example:
+        author: author
+        language: English
+        id: 0
+        title: title
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        author:
+          type: string
+        language:
+          example: English
+          type: string
+      type: object
